@@ -14,43 +14,51 @@ import java.nio.charset.StandardCharsets;
 public class ConsultaCoinGecko {
 
     public void buscarCotacao(String cripto, String moeda) {
-
-        String url = "https://api.coingecko.com/api/v3/simple/price?ids="
-                + URLEncoder.encode(cripto, StandardCharsets.UTF_8)
-                + "&vs_currencies=" + moeda;
+        String url = gerarUrl(cripto, moeda);
 
         try {
-            // Criando o cliente HTTP
-            HttpClient client = HttpClient.newHttpClient();
+            String json = fazerRequisicao(url);
+            double valor = extrairValorDoJson(json, cripto, moeda);
 
-            // Criando o request GET
-            HttpRequest request = HttpRequest.newBuilder()
-                    .uri(URI.create(url))
-                    .build();
-
-            // Enviando o request e recebendo a resposta
-            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-
-            // Tratando o JSON com GSON
-            String json = response.body();
-
-            Gson gson = new Gson();
-            JsonObject jsonObject = gson.fromJson(json, JsonObject.class);
-            JsonObject criptoObject = jsonObject.getAsJsonObject(cripto);
-
-            if (criptoObject != null && criptoObject.has(moeda)) {
-                double valor = criptoObject.get(moeda).getAsDouble();
-
-                System.out.printf("Cotação da %s em %s: %.2f%n",
-                        cripto.substring(0, 1).toUpperCase() + cripto.substring(1),
-                        moeda.toUpperCase(),
-                        valor);
-            } else {
-                System.out.println("Não foi possível obter a cotação. Verifique se a moeda ou a cripto estão corretas.");
-            }
+            System.out.printf("\n💰 Cotação da %s em %s: %.2f%n",
+                    formatarNome(cripto),
+                    moeda.toUpperCase(),
+                    valor);
 
         } catch (IOException | InterruptedException e) {
-            System.out.println("Erro na requisição: " + e.getMessage());
+            System.out.println("❌ Erro na requisição: " + e.getMessage());
+        } catch (NullPointerException e) {
+            System.out.println("❌ Não foi possível obter a cotação. Verifique se a moeda ou a cripto estão corretas.");
         }
+    }
+
+    private String gerarUrl(String cripto, String moeda) {
+        return "https://api.coingecko.com/api/v3/simple/price?ids="
+                + URLEncoder.encode(cripto, StandardCharsets.UTF_8)
+                + "&vs_currencies=" + moeda;
+    }
+
+    private String fazerRequisicao(String url) throws IOException, InterruptedException {
+        HttpClient client = HttpClient.newHttpClient();
+
+        HttpRequest request = HttpRequest
+                .newBuilder()
+                .uri(URI.create(url))
+                .build();
+
+        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+
+        return response.body();
+    }
+
+    private double extrairValorDoJson(String json, String cripto, String moeda) {
+        Gson gson = new Gson();
+        JsonObject jsonObject = gson.fromJson(json, JsonObject.class);
+        JsonObject criptoObject = jsonObject.getAsJsonObject(cripto);
+        return criptoObject.get(moeda).getAsDouble();
+    }
+
+    private String formatarNome(String texto) {
+        return texto.substring(0, 1).toUpperCase() + texto.substring(1);
     }
 }
