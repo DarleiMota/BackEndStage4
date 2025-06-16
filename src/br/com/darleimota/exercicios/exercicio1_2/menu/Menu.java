@@ -1,4 +1,4 @@
-package br.com.darleimota.exercicios.exercicio1_2;
+package br.com.darleimota.exercicios.exercicio1_2.menu;
 
 import java.util.Scanner;
 

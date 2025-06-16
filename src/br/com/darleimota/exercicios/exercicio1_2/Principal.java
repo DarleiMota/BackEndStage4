@@ -1,4 +1,14 @@
+/*
+Crie um programa Java que utiliza as classes HttpClient, HttpRequest e HttpResponse
+para fazer uma consulta à API CoinGecko e exiba a cotação atual de uma criptomoeda
+escolhida pelo usuário.
+*/
+
+
 package br.com.darleimota.exercicios.exercicio1_2;
+
+import br.com.darleimota.exercicios.exercicio1_2.api.ConsultaCoinGecko;
+import br.com.darleimota.exercicios.exercicio1_2.menu.Menu;
 
 import java.util.Scanner;
 
