@@ -6,6 +6,7 @@ Gson para converter um JSON aninhado representando um livro em um objeto do tipo
 
 package br.com.darleimota.exercicios.exercicio2_3;
 
+import br.com.darleimota.exercicios.exercicio2_3.model.Livro;
 import com.google.gson.Gson;
 
 public class Principal {
