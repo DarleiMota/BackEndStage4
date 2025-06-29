@@ -1,4 +1,4 @@
-package br.com.darleimota.exercicios.exercicio3_3;
+package br.com.darleimota.exercicios.exercicio3_3.service;
 
 public class UsuarioGitHub {
     private String login;

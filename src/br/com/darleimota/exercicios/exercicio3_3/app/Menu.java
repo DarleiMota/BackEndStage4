@@ -1,4 +1,8 @@
-package br.com.darleimota.exercicios.exercicio3_3;
+package br.com.darleimota.exercicios.exercicio3_3.app;
+
+import br.com.darleimota.exercicios.exercicio3_3.exception.ErroConsultaGiHubException;
+import br.com.darleimota.exercicios.exercicio3_3.service.GitHubService;
+import br.com.darleimota.exercicios.exercicio3_3.service.UsuarioGitHub;
 
 import java.util.Scanner;
 

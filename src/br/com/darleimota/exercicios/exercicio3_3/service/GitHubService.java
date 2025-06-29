@@ -1,5 +1,6 @@
-package br.com.darleimota.exercicios.exercicio3_3;
+package br.com.darleimota.exercicios.exercicio3_3.service;
 
+import br.com.darleimota.exercicios.exercicio3_3.exception.ErroConsultaGiHubException;
 import com.google.gson.Gson;
 
 import java.io.IOException;

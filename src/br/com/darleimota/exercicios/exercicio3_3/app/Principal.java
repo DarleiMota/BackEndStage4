@@ -16,7 +16,7 @@ Exibir uma mensagem amigavel
 - Separar tudo por responsabilidades.
 */
 
-package br.com.darleimota.exercicios.exercicio3_3;
+package br.com.darleimota.exercicios.exercicio3_3.app;
 
 import java.io.IOException;
 
