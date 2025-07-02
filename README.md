@@ -23,31 +23,32 @@ Nesta etapa, o foco está na manipulação de arquivos `.txt` e `.json`, uso da 
 📁 BackEndStage4/
 ├── src/
 │  │
-│  ├── 📦 desafioViaCep -> Consumo da API ViaCEP + gravação JSON
+│  ├── 📦 desafioViaCep -> API ViaCEP + gravação JSON
 │  │
-│  ├── 📦 exercicio1_1  -> Escrita de arquivo .txt com FileWriter
+│  ├── 📦 exercicio1_1  -> Arquivo com FileWriter
 │  │
-│  ├── 📦 exercicio1_2  -> Serialização de objeto com Gson
+│  ├── 📦 exercicio1_2  -> Serialização com Gson
 │  │
-│  ├── 📦 exercicio1_3  -> JSON formatado com setPrettyPrinting
+│  ├── 📦 exercicio1_3  -> Uso do setPrettyPrinting
 │  │
-│  ├── 📦 exercicio2_1  -> Serialização da classe Veiculo
+│  ├── 📦 exercicio2_1  -> Serialização Veiculo
 │  │
-│  ├── 📦 exercicio2_2  -> Leitura e Escrita com BufferedReader
+│  ├── 📦 exercicio2_2  -> Leitura e Escrita, BufferedReader
 │  │
-│  ├── 📦 exercicio2_3  -> Leitura de arquivo linha a linha
+│  ├── 📦 exercicio2_3  -> Leitura linha a linha de arquivo
 │  │
-│  ├── 📦 exercicio3_1  -> Tratamento de exceções com try-catch
+│  ├── 📦 exercicio3_1  -> Tratando exceções, try-catch
 │  │
-│  ├── 📦 exercicio3_2  -> Lançamento de exceções personalizadas
+│  ├── 📦 exercicio3_2  -> Exceções personalizadas
 │  │
-│  ├── 📦 exercicio3_3  -> Criação e uso de exceções customizadas
+│  ├── 📦 exercicio3_3  -> Criação exceções customizadas
 │  │
-│  ├── 📦 exercicio4_1  -> Escrita de Arquivo .txt com FileWriter
+│  ├── 📦 exercicio4_1  -> Escrita de Arquivo, FileWriter
 │  │
-│  ├── 📦 exercicio4_2/4_3 -> Serialização com Gson, JSON Formatado 
-│  │                             com setPrettyPrinting
-│  └── 📦 exercicio4_4  -> Escrita segura com try-with-resources
+│  ├── 📦 exercicio4_2  -> Serialização com Gson,  
+│  │               4_3  -> Formatado com setPrettyPrinting
+│  │
+│  └── 📦 exercicio4_4  -> Serialização uso setPrettyPrinting
 │
 ├── arquivo.txt
 │
